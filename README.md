@@ -1,3 +1,10 @@
-This project addresses the global optimization problem of determining the n-nanoparticle cluster configuration that yields the minimum potential energy (also as known as Lennard-Jones cluster global minima), using numerical conjugate gradient method.
-So far I have conducted 1000 simulations for each n-number of particles to yield the minimum results of the potential energy with their trajectories after every step of conjugate gradient method. The deviation compared to the published paper is still significant, especially when n increases from 11 particles. I am actively working on a way to optimize the results as well as reduce the computational cost.
-A visualization of how the particles of a 13-particle cluster relocate to approach the state of minimal potential energy is saved in nano.traj, which can be observed the the command line: $ ase gui nano.traj
+This project addresses the global optimization problem of determining the n-nanoparticle cluster configuration that yields the minimum potential energy (also as known as Lennard-Jones cluster global minima), using numerical conjugate gradient method. It covers 4 tasks in total.
+
+*Task 1:* Implement all functions for initalizing random positions, calculating potential energy and interactive forces, as well as line search and conjugate gradient methods. 
+
+*Task 2:* Do a 1000-time simulation by executing the code 1000 times for each number of particles of the cluster to yield the minimum potential energies (U_{min}) and store their numbers of Conjugate Gradient Step (CGSteps) and trajectories. Plot U_{min} and CGSteps required to reach it as a function of N.
+
+*Task 3*: For this minimum case at each N, plot the evolution of potential energy as a function of CGStesps and visualize the particles.Visualizations of how the particles of a N-particle cluster relocate to approach the state of minimum potential energy is saved in 'Trjectories' director, which can be observed the the command line: $ ase gui Trajectories/nano{N}.traj
+
+*Task 4*: The macroscopic scaling estimate for nanoparticle energy is given by U_{macro}(N) = a + bN^{\frac{2}{3}} + cN. Fit the minimum potential energy data to this formula using least squares minimization and find the constants a, b, c. Finally plot the U_{min} - U_{macro} as a function of N.
+
